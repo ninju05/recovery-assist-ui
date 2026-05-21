@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Assist - Clinical Support System</title>
+    <meta name="description" content="Recovery Assist is a rule-driven clinical support system designed to assist patients after hospital discharge.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">RecoveryAssist</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" id="nav-home">Home</a>
+            <a href="#" class="btn btn-outline" id="nav-login">Login</a>
+            <a href="#" class="btn btn-primary hidden" id="nav-dashboard">Dashboard</a>
+            <a href="#" class="btn btn-outline hidden" id="nav-logout">Logout</a>
+        </div>
+    </nav>
+
+    <main id="app-content">
+        <!-- Home View -->
+        <section id="view-home" class="view active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>The Best Medical Recovery and Support Center for You</h1>
+                    <p>We simplify your discharge summaries into patient-friendly instructions, helping you manage your health with expertise and dedication.</p>
+                    <button class="btn btn-large btn-primary" id="btn-get-started">Get Started</button>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-blob"></div>
+                    <div class="hero-card">
+                        <h3>Need help understanding your recovery?</h3>
+                        <p>Upload your discharge summary for clear, actionable guidelines.</p>
+                        <button class="btn btn-secondary mt-15" id="btn-hero-learn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-card stat-dark">
+                    <h2>98%</h2>
+                    <p>Improved Medication Adherence</p>
+                </div>
+                <div class="stat-card stat-light">
+                    <h2>85%</h2>
+                    <p>Less Missed Follow-ups</p>
+                </div>
+                <div class="stat-card stat-white">
+                    <h2>1000+</h2>
+                    <p>Clinical Rules Processed</p>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="section-header">
+                    <h2>Our Core Services</h2>
+                    <p>Simplifying your journey from hospital to full recovery</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-summary"></div>
+                        <h3>Summary Simplification</h3>
+                        <p>We convert complex medical terminology into patient-friendly explanations to improve comprehension.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon icon-meds"></div>
+                        <h3>Medication Reminders</h3>
+                        <p>Extract medication frequency to generate schedules, automated timers, and alerts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon icon-tips"></div>
+                        <h3>Activity Guidelines</h3>
+                        <p>Match identified conditions with rule-based logic to trigger safe recovery activity instructions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login / Register View -->
+        <section id="view-auth" class="view hidden">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" id="tab-login">Login</button>
+                        <button class="auth-tab" id="tab-register">Register</button>
+                    </div>
+                    
+                    <!-- Login Form -->
+                    <form id="form-login" class="auth-form active">
+                        <h2>Welcome Back</h2>
+                        <p class="auth-subtitle">Login to access your recovery plans</p>
+                        
+                        <div class="form-group">
+                            <label for="login-email">Email or Username</label>
+                            <input type="text" id="login-email" placeholder="Enter email or username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Login</button>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form id="form-register" class="auth-form hidden">
+                        <h2>Create Account</h2>
+                        <p class="auth-subtitle">Join us to start your guided recovery</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-name">Full Name</label>
+                                <input type="text" id="reg-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-age">Age</label>
+                                <input type="number" id="reg-age" placeholder="30" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-gender">Gender</label>
+                            <select id="reg-gender" required>
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-username">Username</label>
+                            <input type="text" id="reg-username" placeholder="johndoe123" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" placeholder="Create a strong password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-confirm">Confirm Password</label>
+                            <input type="password" id="reg-confirm" placeholder="Confirm your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Module View -->
+        <section id="view-upload" class="view hidden">
+            <div class="dashboard-header">
+                <h2>Upload Discharge Summary</h2>
+                <p>Upload your hospital document to generate a structured recovery plan.</p>
+            </div>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-icon">📄</div>
+                    <h3>Drag & Drop your file here</h3>
+                    <p>or click to browse your files</p>
+                    <p class="upload-hint">Supported formats: PDF, DOCX (Max 10MB)</p>
+                    <input type="file" id="file-input" accept=".pdf,.docx" hidden>
+                    <button class="btn btn-outline mt-15" id="btn-browse">Browse Files</button>
+                </div>
+                <div id="upload-status" class="upload-status hidden">
+                    <div class="spinner"></div>
+                    <p>Processing text and applying rules...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard / Results View -->
+        <section id="view-dashboard" class="view hidden">
+            <div id="backend-result" style="margin-top:20px; font-size:18px; font-weight:bold;"></div>
+            <div class="dashboard-header">
+
+                <h2>Your Recovery Plan</h2>
+                <p>Simplified instructions tailored for your safe recovery.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Summary Card -->
+                <div class="dash-card full-width">
+                    <div class="card-header">
+                        <h3>Simplified Summary</h3>
+                        <span class="badge">AI Assisted</span>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Primary Diagnosis:</strong> Post-Operative Appendectomy.</p>
+                        <p><strong>Explanation:</strong> You had a surgery to remove your appendix because it was inflamed. The procedure went well without complications. You will need to rest and allow your abdominal muscles to heal.</p>
+                    </div>
+                </div>
+
+                <!-- Recovery Tips & Guidelines -->
+                <div class="dash-card">
+                    <div class="card-header">
+                        <h3>Recovery Tips & Mobility</h3>
+                    </div>
+                    <ul class="checklist">
+                        <li>Walk for 10-15 minutes daily to prevent blood clots.</li>
+                        <li>Avoid lifting anything heavier than 10 lbs for 4 weeks.</li>
+                        <li>Keep the surgical incision clean and dry.</li>
+                        <li>Drink plenty of fluids (8-10 glasses) to aid digestion.</li>
+                    </ul>
+                </div>
+
+                <!-- Next Consultations -->
+                <div class="dash-card">
+                    <div class="card-header">
+                        <h3>Doctor Consultations</h3>
+                    </div>
+                    <div class="appointment-card">
+                        <div class="apt-date">
+                            <span class="day">14</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="apt-details">
+                            <h4>Dr. Michael Anderson</h4>
+                            <p>Surgical Follow-up</p>
+                        </div>
+                    </div>
+                    <div class="appointment-card">
+                        <div class="apt-date">
+                            <span class="day">28</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="apt-details">
+                            <h4>Wound Care Clinic</h4>
+                            <p>Staple Removal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medication Plan -->
+                <div class="dash-card full-width">
+                    <div class="card-header">
+                        <h3>Medication Schedule</h3>
+                    </div>
+                    <div class="meds-list">
+                        <div class="med-item">
+                            <div class="med-info">
+                                <h4>Amoxicillin 500mg</h4>
+                                <p>Take 1 pill after meals, 3 times a day for 7 days.</p>
+                            </div>
+                            <div class="med-timer" id="timer-amox">
+                                <span class="time-left">04:30:00</span>
+                                <span class="time-label">Until next dose</span>
+                            </div>
+                            <button class="btn btn-outline btn-small med-action">Taken</button>
+                        </div>
+                        <div class="med-item">
+                            <div class="med-info">
+                                <h4>Ibuprofen 400mg</h4>
+                                <p>Take 1 pill as needed for pain, maximum 4 times a day.</p>
+                            </div>
+                            <div class="med-timer">
+                                <span class="time-left">As needed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
